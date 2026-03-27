@@ -1,0 +1,31 @@
+include:
+  - project: 'ci/ci-upr'
+    ref: main
+    file: 'main.yaml'
+
+variables:
+  PROD_NAMESPACE: lk-prod
+  TEST_NAMESPACE: lk-test
+  APP_NAME_BASE: $CI_PROJECT_NAME
+
+build_test:
+  variables:
+    APP_NAME: ${APP_NAME_BASE}-test
+    BUILD_ARGS: >-
+      --build-arg API_PATH=https://${APP_NAME_BASE}-api.my1.urfu.ru/api
+      --build-arg BASE_URL=https://${APP_NAME_BASE}.my1.urfu.ru
+      --build-arg KEYCLOAK_REALM=test
+      --build-arg KEYCLOAK_CLIENT_ID=${APP_NAME_BASE}
+      --build-arg KEYCLOAK_URL=https://keys.urfu.ru/auth/
+
+
+build_prod:
+  variables:
+    APP_NAME: ${APP_NAME_BASE}
+    BUILD_ARGS: >-
+      --build-arg API_PATH=https://${APP_NAME_BASE}-api.my1.urfu.ru/api
+      --build-arg BASE_URL=https://${APP_NAME_BASE}.my1.urfu.ru
+      --build-arg KEYCLOAK_REALM=urfu-lk
+      --build-arg KEYCLOAK_CLIENT_ID=${APP_NAME_BASE}
+      --build-arg KEYCLOAK_URL=https://keys.urfu.ru/auth/
+

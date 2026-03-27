@@ -1,0 +1,116 @@
+{
+    "app": {
+        "appTitle": "Модерация контактов",
+        "appDescription": "На основе lk-form"
+    },
+    "forms": {},
+    "fields": {
+        "specialFields": [
+            "status",
+            "formSubmissionDateTime",
+            "formSubmissionUser",
+            "moderatorFeedbackToSubmission"
+        ],
+        "formFields": [
+            {
+                "name": "targetUserId",
+                "title": "Чьи контакты изменяются (userId)",
+                "type": "string",
+                "visibleInSubmissionsView": false,
+                "required": true,
+                "editable": false,
+                "hiddenInEdit": true,
+                "visibleInSingleView": false
+            },
+            {
+                "name": "targetUserId_readable",
+                "title": "Чьи контакты изменяются",
+                "type": "string",
+                "visibleInSubmissionsView": true,
+                "required": true,
+                "editable": false,
+                "hiddenInEdit": true
+            },
+            {
+                "name": "roleId",
+                "title": "roleId",
+                "type": "string",
+                "visibleInSubmissionsView": false,
+                "required": true,
+                "editable": false,
+                "hiddenInEdit": true,
+                "visibleInSingleView": false
+            },
+            {
+                "name": "submitter_readable",
+                "title": "Отправитель",
+                "type": "string",
+                "visibleInSubmissionsView": true,
+                "required": true,
+                "editable": false,
+                "hiddenInEdit": true
+            },
+            {
+                "name": "roleId_readable",
+                "title": "Должность",
+                "type": "string",
+                "visibleInSubmissionsView": true,
+                "required": true,
+                "editable": false,
+                "hiddenInEdit": true
+            },
+            {
+                "name": "division",
+                "title": "Подразделение",
+                "type": "string",
+                "visibleInSubmissionsView": true,
+                "editable": false,
+                "hiddenInEdit": true
+            },
+            {
+                "name": "separator",
+                "type": "separator",
+                "hiddenInEdit": true
+            },
+            {
+                "name": "phone_old",
+                "title": "Телефон (старый)",
+                "type": "string",
+                "visibleInSubmissionsView": true,
+                "editable": false
+            },
+            {
+                "name": "phone_new",
+                "title": "Телефон (новый)",
+                "type": "string",
+                "visibleInSubmissionsView": true
+            },
+            {
+                "name": "address_old",
+                "title": "Адрес (старый)",
+                "type": "string",
+                "visibleInSubmissionsView": true,
+                "editable": false
+            },
+            {
+                "name": "address_new",
+                "title": "Адрес (новый)",
+                "type": "string",
+                "visibleInSubmissionsView": true
+            },
+            {
+                "name": "email_old",
+                "title": "Email (старый)",
+                "type": "string",
+                "visibleInSubmissionsView": true,
+                "editable": false
+            },
+            {
+                "name": "email_new",
+                "title": "Email (новый)",
+                "type": "string",
+                "visibleInSubmissionsView": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,48 @@
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    .status {
+        padding: 5px 12px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #222222;
+    }
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px dashed #9FAECD;
+
+    .group1, .group2 {
+        flex: 0.95;
+
+        .item {
+            margin-top: 12px;
+            display: flex;
+
+            .label {
+                flex: 0.8;
+                color: #545454;
+                font-size: 14px;
+                align-self: start;
+            }
+
+            .value {
+                flex: 1.2;
+                color: #222222;
+                font-size: 14px;
+                font-weight: 600;
+                align-self: start;
+            }
+        }
+    }
+    .group2{
+        flex: 1.05
+    }
+}

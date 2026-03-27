@@ -1,0 +1,23 @@
+export const colors = {
+    mainPrimary: '#1E4391',
+    mainDanger: '#EF302B',
+    mainLight: '#F6F6F6',
+    mainDark: '#222222',
+    mainGreen: '#147246',
+    mainEmpty: '#FFFFFF',
+    secondaryPrimary: '#0F2B5E',
+    secondaryQuiet: '#CAD1E1',
+    gray20: '#D3D3D3',
+    blue12: '#E7F2FF',
+    blue60: '#748AB9',
+    red12: '#FDEAEA',
+    red60: '#F58380',
+    green: '#147246',
+    green12: '#EDF7EB',
+    orange: '#E98446',
+    orange12: '#FCF4E6',
+    purple: '#742C8E',
+    purple12: '#F6EDF9',
+    greenBlue: '#0987AE',
+    greenBlue12: '#E9FDFD'
+}

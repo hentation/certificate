@@ -1,0 +1,1 @@
+export * as SqlString from "./main";

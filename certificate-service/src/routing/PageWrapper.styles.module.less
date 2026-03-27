@@ -1,0 +1,52 @@
+@import '~/styles/const-colors.less';
+
+@wrapperPadding: 16px;
+
+.pageWrapperStyles {
+  display: flex;
+  height: 100vh;
+  background-color: @main-light;
+}
+
+.contentWrapper {
+  width: 100vw;
+  overflow-y: auto;
+}
+
+.contentStyles {
+  display: flex;
+  flex-direction: column;
+  padding: 24px @wrapperPadding 32px @wrapperPadding;
+  max-width: calc(1012px + @wrapperPadding * 2);
+  row-gap: 64px;
+  justify-content: space-between;
+  min-height: 100%;
+  margin: auto;
+
+  &[data-route="moderation"] {
+    max-width: calc(1200px + @wrapperPadding * 2);
+  }
+
+   &[data-route="audition"] {
+    max-width: calc(1200px + @wrapperPadding * 2);
+  }
+
+  &[data-route="admin"] {
+    max-width: calc(1400px + @wrapperPadding * 2);
+  }
+
+  &[data-route="org-committee"] {
+    max-width: calc(1400px + @wrapperPadding * 2);
+  }
+  
+  &[data-route="no-access"] {
+    max-width: unset;
+    .children {
+      margin: auto;
+    }
+  }
+} 
+
+.preloader {
+  height: 100vh;
+}

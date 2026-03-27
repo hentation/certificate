@@ -1,0 +1,2 @@
+variables:
+  APP_NAME_BASE: $CI_PROJECT_NAME 

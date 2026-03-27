@@ -1,0 +1,30 @@
+{
+    "app": {
+        "appTitle": "Заказ справки",
+        "appDescription": "Сервис для заказа различных справок. При желании можно конкретизировать описывающий файл под конкретную справку."
+    },
+    "forms": {
+        "enableFormSubmissionByAnyUser": true,
+        "_enableCustomView": "true"
+    },
+    "fields": {
+        "formFields": [
+            {
+                "name": "info",
+                "type": "info",
+                "title": "Вы заказываете справку"
+            },
+            {
+                "name": "paperType",
+                "title": "Вид справки",
+                "type": "string",
+                "required": true
+            },
+            {
+                "name": "paperProvidePlace",
+                "title": "Место предъявления справки",
+                "type": "string"
+            }
+        ]
+    }
+}

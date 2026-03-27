@@ -1,0 +1,41 @@
+{
+    "app": {
+        "appTitle": "Тестовая форма",
+        "appDescription": "Сервис списка сервисов. Может использоваться другими сервисами, например, в панели сервисов my1.urfu.ru"
+    },
+    "forms": {
+        "enableFormSubmissionByAnyUser": true,
+        "_enableCustomView": "true"
+    },
+    "fields": {
+        "formFields": [
+            {
+                "name": "serviceId",
+                "title": "ID",
+                "type": "string",
+                "required": true
+            },
+            {
+                "name": "serviceName",
+                "title": "Название",
+                "type": "string",
+                "required": true
+            },
+            {
+                "name": "serviceDescription",
+                "title": "Описание",
+                "type": "string"
+            },
+            {
+                "name": "serviceUrl",
+                "title": "Ссылка",
+                "type": "string"
+            },
+            {
+                "name": "serviceIcon",
+                "title": "Иконка",
+                "type": "string"
+            }
+        ]
+    }
+}

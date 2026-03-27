@@ -1,0 +1,56 @@
+@import '~/styles/const-colors.less';
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.expertField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.addExpert,
+.editExpert {
+  color: @main-primary;
+  cursor: pointer;
+  padding: 8px 14px;
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+}
+
+.expertValue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.buttonField {
+  display: flex;
+  column-gap: 8px;
+}
+
+.iconPlus {
+  font-weight: 600;
+}
+
+.modalButtons {
+  display: flex;
+  column-gap: 12px;
+  justify-content: flex-end;
+  margin-top: 45px;
+}
+
+.search {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.employeesList {
+  max-height: 300px; 
+  overflow-y: auto;
+  margin-top: 24px;
+  background: @main-empty;
+}

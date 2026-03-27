@@ -1,0 +1,116 @@
+@import '~/styles/const-colors.less';
+
+.orgCommitteeCardContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.filterContainerStyle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+    > *:nth-child(1) {
+        flex: 309;
+        min-width: 240px;
+    }
+
+    > *:nth-child(2) {
+        flex: 300;
+        min-width: 240px;
+    }
+
+    > *:nth-child(3) {
+        flex: 391;
+        min-width: 240px;
+    }
+
+    > *:nth-child(4) {
+        width: 48px;
+        margin-left: auto;
+    }
+
+    > *:nth-child(5) {
+        flex: 240;
+        max-width: 227px;
+        margin-left: auto;
+    }
+}
+
+.select {
+  min-width: 200px;
+} 
+
+.titleWrapper {
+    display: flex;
+    column-gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.titleLinkWrapper {
+    display: flex;
+    column-gap: 8px;
+    border: 1px solid @gray-20;
+    border-radius: 10px;
+    height: 48px;
+    padding: 0 32px;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 24px;
+    background: @main-empty;
+    &:hover {
+        border: 1px solid @main-primary;
+        p, i {
+            color: @main-primary !important;
+            transition-property: color, background-color, border-color, background-image;
+            transition-duration: .15s;
+            transition-timing-function: ease-in-out;
+        }
+    }
+}
+
+.statusList {
+    display: flex;
+    column-gap: 12px;
+    row-gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.status {
+    display: flex;
+    column-gap: 8px;
+    padding: 20px 16px;
+    min-width: 215px;
+    flex: 1;
+    align-items: center;
+    border-radius: 10px;
+    &Mod{
+        background-color: @orange-12;
+    }
+    &Eva{
+        background-color: @green-blue-12;
+    }
+    &Rej{
+        background-color: @red-12;
+    }
+    &All{
+        background-color: @green-12;
+    }
+    &Text {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 12px;
+        width: 100%;
+    }
+}
+
+.buttonTooltip {
+    max-width: 227px;
+}
+
+.iconInfo {
+    vertical-align: middle;
+}

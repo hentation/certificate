@@ -1,0 +1,88 @@
+.scientificActivity {
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    border-bottom: 1px dashed #9FAECD;
+}
+
+.direction {
+    display: flex;
+    column-gap: 90px;
+}
+
+.table{
+    .thIcon{
+        color: #748AB9 !important;
+        position: absolute;
+        width: 100%;
+        text-align: end;
+        height: 100%;
+        top: 30%;
+        &:hover{
+            color: #1E4391 !important;
+        }
+        
+    }
+    .thContainer{
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        span{
+            text-align: center;
+        }
+    }
+    tr:hover{
+        background-color: #fff !important; 
+    }
+    td:first-child{
+        padding: 0 12px !important;
+    }
+    td{
+        border-color: #D3D3D3 !important;
+        height: 40px;
+        font-size: 12px;
+    }
+    th:nth-child(2), th:nth-child(3){
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+        width: 150px !important;
+    }
+    .score{
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        align-items: center;
+    }
+}
+
+.buttonPanel{
+    margin-top: 16px;
+    padding: 24px 32px !important;
+    position: sticky;
+    bottom: 0;
+    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+
+    .buttonContainer{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.modalSendTitle{
+    color: #1E4391;
+    font-size: 24px;
+}
+
+.modalSendDescription{
+    margin-top: 32px;
+}
+
+.modalSendButtons{
+    margin-top: 42px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}

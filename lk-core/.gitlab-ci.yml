@@ -1,0 +1,123 @@
+services:
+- name: docker:20.10.14-dind
+  command: ["--tls=false"]
+
+
+stages:
+  - build
+  - deployment
+
+variables:
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_HOST: tcp://docker:2375
+
+
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      variables:
+          NAMESPACE: dev
+          APP_NAME: certificate-service-api
+          PROJECT: lk
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+      variables:
+          NAMESPACE: dev
+          APP_NAME: certificate-service-api-test
+          PROJECT: lk
+
+docker-build-dev:
+  image: nexus.urfu.ru/docker:stable
+  stage: build
+  environment:
+    name: test
+    url: https://certificate-service-api-test.my1.urfu.ru
+    deployment_tier: development
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+  tags:
+    - lk-docker
+  before_script:
+    - echo "$APP_NAME"
+    - echo "$URFU_REGISTRY/$PROJECT/${APP_NAME}:${CI_PIPELINE_ID}"
+    - echo  $lk_project_password | docker login $URFU_REGISTRY --username "$lk_project_user" --password-stdin
+  script:
+    - docker build --pull --cache-from "$URFU_REGISTRY/$PROJECT/${APP_NAME}" -t "$URFU_REGISTRY/$PROJECT/${APP_NAME}:${CI_PIPELINE_ID}" .
+    - docker push "$URFU_REGISTRY/$PROJECT/${APP_NAME}:${CI_PIPELINE_ID}"
+    - docker tag "$URFU_REGISTRY/$PROJECT/${APP_NAME}:${CI_PIPELINE_ID}" "$URFU_REGISTRY/$PROJECT/${APP_NAME}:latest"
+    - docker push "$URFU_REGISTRY/$PROJECT/${APP_NAME}:latest"
+
+deploy-to-k8s-dev:
+  stage: deployment
+  environment:
+    name: test
+    url: https://lk-contacts-admin-api-test.my1.urfu.ru
+    deployment_tier: development
+  image:
+    name: nexus.urfu.ru/alpine/helm:latest
+    entrypoint: [""]
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+  tags:
+    - shared
+  before_script:
+    - mkdir ~/.kube/
+    - echo $lk_runner_conf | base64 -d > ~/.kube/config
+    - echo  $lk_project_password | helm registry login $URFU_REGISTRY --username "$lk_project_user" --password-stdin
+    - echo "oci://$URFU_REGISTRY/$PROJECT/${APP_NAME}:${CHART_VERSION}"
+  script:
+    - helm pull "oci://$URFU_REGISTRY/$PROJECT/${APP_NAME}"
+    - helm upgrade ${APP_NAME} "oci://$URFU_REGISTRY/$PROJECT/${APP_NAME}" --version 0.1.0 --install --namespace ${NAMESPACE}
+  
+docker-build:
+  image: nexus.urfu.ru/docker:stable
+  stage: build
+  when: manual
+  environment:
+    name: production
+    url: https://certificate-service-api.my1.urfu.ru
+    deployment_tier: production
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  tags:
+    - lk-docker
+  before_script:
+    - echo "$APP_NAME"
+    - echo "$URFU_REGISTRY/$PROJECT/${APP_NAME}:${CI_PIPELINE_ID}"
+    - echo  $lk_project_password | docker login $URFU_REGISTRY --username "$lk_project_user" --password-stdin
+  script:
+    - docker build --pull --cache-from "$URFU_REGISTRY/$PROJECT/${APP_NAME}" -t "$URFU_REGISTRY/$PROJECT/${APP_NAME}:${CI_PIPELINE_ID}" .
+    - docker push "$URFU_REGISTRY/$PROJECT/${APP_NAME}:${CI_PIPELINE_ID}"
+    - docker tag "$URFU_REGISTRY/$PROJECT/${APP_NAME}:${CI_PIPELINE_ID}" "$URFU_REGISTRY/$PROJECT/${APP_NAME}:latest"
+    - docker push "$URFU_REGISTRY/$PROJECT/${APP_NAME}:latest"
+
+deploy-to-k8s:
+  stage: deployment
+  when: manual
+  environment:
+    name: production
+    url: https://certificate-service-api.my1.urfu.ru
+    deployment_tier: production
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  image:
+    name: nexus.urfu.ru/alpine/helm:latest
+    entrypoint: [""]
+  tags:
+    - shared
+  before_script:
+    - mkdir ~/.kube/
+    - echo $lk_runner_conf | base64 -d > ~/.kube/config
+    - echo  $lk_project_password | helm registry login $URFU_REGISTRY --username "$lk_project_user" --password-stdin
+    - echo "oci://$URFU_REGISTRY/$PROJECT/${APP_NAME}:${CHART_VERSION}"
+  script:
+    - helm pull "oci://$URFU_REGISTRY/$PROJECT/${APP_NAME}"
+    - helm upgrade ${APP_NAME} "oci://$URFU_REGISTRY/$PROJECT/${APP_NAME}" --version 0.1.0 --install --namespace ${NAMESPACE}
+  
+
+
+
+ #docker tag SOURCE_IMAGE[:TAG] k8store.urfu.ru/sandbox/REPOSITORY[:TAG]
+ #k8store.urfu.ru/sandbox/REPOSITORY[:TAG]
+ #k8store.urfu.ru/sandbox/thor:14
+ #cat config | base64 -w0 > config.txt
+

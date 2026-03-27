@@ -1,0 +1,87 @@
+{
+    "app": {
+        "appTitle": "Регистрация мероприятий",
+        "appDescription": "Сервис lk-form на примере заявок на различные мероприятия. Этот пример показывает типичный use case: возможность приёма заявок от внешних пользователей, изменения модераторами и отображение конкретных заявок через API"
+    },
+    "forms": {},
+    "fields": {
+        "specialFields": [
+            "status",
+            "formSubmissionDateTime",
+            "formSubmissionUser",
+            "moderatorFeedbackToSubmission"
+        ],
+        "formFields": [
+            {
+                "name": "title",
+                "title": "Заголовок мероприятия",
+                "type": "string",
+                "required": true
+            },
+            {
+                "name": "paper_number",
+                "title": "Номер договора",
+                "type": "string",
+                "visibleInSubmissionsView": false
+            },
+            {
+                "name": "time_period",
+                "title": "Период проведения мероприятия",
+                "type": "string",
+                "required": true
+            },
+            {
+                "name": "eduComponent",
+                "title": "Компонент образовательной программы",
+                "type": "string",
+                "visibleInSubmissionsView": false
+            },
+            {
+                "name": "needsEventEscort",
+                "title": "Необходимость в сопроводителе мероприятия",
+                "type": "bool",
+                "visibleInSubmissionsView": false
+            },
+            {
+                "name": "eventAddress",
+                "title": "Адрес проведения мероприятия",
+                "type": "string",
+                "visibleInSubmissionsView": false,
+                "required": true
+            },
+            {
+                "name": "contactInfo",
+                "title": "Информация для связи и уточнения деталей для проведения мероприятия",
+                "type": "info",
+                "visibleInSubmissionsView": false
+            },
+            {
+                "name": "responsiblePerson",
+                "title": "ФИО ответственного за мероприятие",
+                "type": "string",
+                "visibleInSubmissionsView": false,
+                "required": true
+            },
+            {
+                "name": "contactPhone",
+                "title": "Телефон для связи",
+                "type": "string",
+                "visibleInSubmissionsView": false
+            },
+            {
+                "name": "contactEmail",
+                "title": "Email для связи",
+                "type": "string",
+                "visibleInSubmissionsView": false,
+                "required": true
+            },
+            {
+                "name": "extra",
+                "title": "Дополнительная информация",
+                "type": "string",
+                "appearance": "long",
+                "visibleInSubmissionsView": false
+            }
+        ]
+    }
+}

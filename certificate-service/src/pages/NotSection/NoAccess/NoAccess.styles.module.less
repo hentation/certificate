@@ -1,0 +1,56 @@
+@import '~/routing/PageWrapper.styles.module.less';
+
+.card {
+  position: relative;
+  z-index: 2;
+  max-width: calc(550px + @wrapperPadding * 2);
+  margin: auto;
+  padding: 32px 32px 32px 174px;
+  background-image: url("data:image/svg+xml,%3Csvg width='110' height='134' viewBox='0 0 110 134' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.894 79H8.33399C5.02028 79 2.33398 76.3137 2.33398 73V13C2.33398 9.68629 5.02028 7 8.33398 7H102.334C105.648 7 108.334 9.68629 108.334 13V73C108.334 76.3137 105.648 79 102.334 79H31.1105' stroke='%23222222' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M8.83398 22L101.834 22' stroke='%23222222' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M95.834 12L97.834 14M97.834 14L99.834 12M97.834 14L99.834 16M97.834 14L95.834 16' stroke='%23222222' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M84.834 16H88.834' stroke='%23222222' stroke-width='3' stroke-linecap='round'/%3E%3Crect x='23.5' y='36.5' width='73' height='96' rx='4.5' fill='white' stroke='%23222222' stroke-width='3'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M85 71.5C85 72.3284 84.3284 73 83.5 73L36.5 73C35.6716 73 35 72.3284 35 71.5C35 70.6716 35.6716 70 36.5 70L83.5 70C84.3284 70 85 70.6716 85 71.5Z' fill='%23222222'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M85 60.5C85 61.3284 84.3284 62 83.5 62L36.5 62C35.6716 62 35 61.3284 35 60.5C35 59.6716 35.6716 59 36.5 59L83.5 59C84.3284 59 85 59.6716 85 60.5Z' fill='%23222222'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M85 49.5C85 50.3284 84.3284 51 83.5 51L36.5 51C35.6716 51 35 50.3284 35 49.5C35 48.6716 35.6716 48 36.5 48L83.5 48C84.3284 48 85 48.6716 85 49.5Z' fill='%23222222'/%3E%3Cpath d='M72 104.5C72 97.5964 66.4036 92 59.5 92C56.581 92 53.9006 92.9995 51.7725 94.6768L68.7119 112.946C70.7528 110.722 72 107.757 72 104.5ZM75 104.5C75 113.06 68.0604 120 59.5 120V117C62.0649 117 64.4486 116.226 66.4326 114.901L49.6523 96.8037C47.9898 98.9269 47 101.595 47 104.5C47 111.404 52.5964 117 59.5 117V120C50.9396 120 44 113.06 44 104.5C44 100.319 45.655 96.5253 48.3457 93.7373L48.6094 93.4707C51.4087 90.7064 55.2551 89 59.5 89C68.0604 89 75 95.9396 75 104.5Z' fill='%231E4391'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: 32px 32px;
+}
+
+.bagim {
+  position: absolute;
+  left: -153px;
+  top: 68px;
+  width: 85px;
+  height: 85px;
+  background: url("data:image/svg+xml,%3Csvg width='85' height='85' viewBox='0 0 85 85' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M42.5031 0L43.6205 39.7943L72.5522 12.4487L45.2023 41.3826L85 42.5L45.2023 43.6237L72.5522 72.5513L43.6205 45.2057L42.5031 85L41.3795 45.2057L12.4477 72.5513L39.7976 43.6237L0 42.5L39.7976 41.3826L12.4477 12.4487L41.3795 39.7943L42.5031 0Z' fill='%23003DA6'/%3E%3C/svg%3E%0A") no-repeat center/contain;
+  z-index: 1;
+}
+
+.bagim2 {
+  position: absolute;
+  right: -16px;
+  top: -68px;
+  width: 37px;
+  height: 37px;
+  background: url("data:image/svg+xml,%3Csvg width='37' height='37' viewBox='0 0 37 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M37 18.5C26.7836 18.5 18.5 10.2164 18.5 0C18.5 10.2164 10.2164 18.5 0 18.5C10.2164 18.5 18.5 26.7836 18.5 37C18.5 26.7836 26.7836 18.5 37 18.5Z' fill='%23003DA6'/%3E%3C/svg%3E%0A") no-repeat center/contain;
+  z-index: 1;
+}
+
+.bagim3 {
+  position: absolute;
+  right: -30px;
+  bottom: -128px;
+  width: 66px;
+  height: 66px;
+  background: url("data:image/svg+xml,%3Csvg width='66' height='66' viewBox='0 0 66 66' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M33.18 1L33.69 8.93001C33.98 13.41 40.01 14.61 41.99 10.58L45.49 3.45L42.93 10.97C41.48 15.22 46.6 18.63 49.96 15.67L55.93 10.42L50.68 16.39C47.72 19.76 51.13 24.87 55.38 23.43L62.9 20.87L55.77 24.38C51.75 26.36 52.95 32.39 57.42 32.68L65.35 33.19L57.42 33.7C52.94 33.99 51.74 40.02 55.77 42L62.9 45.51L55.38 42.95C51.13 41.5 47.72 46.62 50.68 49.99L55.93 55.96L49.96 50.71C46.59 47.75 41.48 51.16 42.93 55.41L45.49 62.93L41.99 55.8C40.01 51.77 33.98 52.97 33.69 57.45L33.18 65.38L32.67 57.45C32.38 52.97 26.35 51.77 24.37 55.8L20.87 62.93L23.43 55.41C24.88 51.16 19.76 47.75 16.39 50.71L10.42 55.96L15.67 49.99C18.63 46.62 15.22 41.51 10.97 42.95L3.44998 45.51L10.58 42C14.61 40.02 13.41 33.99 8.92999 33.7L1 33.19L8.92999 32.68C13.41 32.39 14.61 26.36 10.58 24.38L3.44998 20.87L10.97 23.43C15.21 24.88 18.63 19.76 15.67 16.39L10.42 10.42L16.39 15.67C19.76 18.63 24.87 15.22 23.43 10.97L20.87 3.45L24.37 10.58C26.35 14.61 32.38 13.41 32.67 8.93001L33.18 1Z' stroke='%23174496'/%3E%3C/svg%3E%0A") no-repeat center/contain;
+  z-index: 1;
+}
+
+.dot {
+  min-width: 6px;
+  min-height: 6px;
+  background-color: @main-primary;
+  border-radius: 50%;
+}
+
+@media (max-width: 750px) {
+  .bagim, .bagim2, .bagim3 {
+    display: none;
+  }
+}
+

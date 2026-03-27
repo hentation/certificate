@@ -1,0 +1,25 @@
+.u-collapsible-menu {  
+    --max-width: none;  
+    .u-collapsible-menu-body {  
+        max-width: var(--max-width-body);
+    } 
+    .u-collapsible-menu-input:checked ~ .u-collapsible-menu-body {  
+        max-width: var(--max-width);
+    }  
+}  
+
+.u-collapsible-menu-list-item-link, .u-collapsible-menu-list-item-link:hover {
+    color: unset;
+    text-decoration: unset;
+}
+
+@media screen and (max-width: 425px) {
+    .u-collapsible-menu-input:checked ~ .u-collapsible-menu-body {  
+        max-width: 0 !important;
+    }  
+    .u-collapsible-menu {
+        position: absolute;
+        z-index: 1000;
+        max-width: max-content;
+    }        
+}

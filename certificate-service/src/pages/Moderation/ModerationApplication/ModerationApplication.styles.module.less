@@ -1,0 +1,79 @@
+.comment{
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    background-color: #FCF4E6;
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+
+.scientificActivity{
+    margin-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px #9FAECD dashed;
+
+    .direction{
+        margin-top: 12px;
+        display: flex;
+        gap: 83px;
+
+        .label {
+            color: #545454;
+            font-size: 14px;
+        }
+        
+        .value {
+            color: #222222;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+    }
+
+    .inputScore{
+        all: unset;
+        width: 50px;
+        font-size: 14px;
+        border-radius: 10px;
+        padding: 10px 12px;
+        border: solid 1px #D3D3D3;
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+    }
+
+    .buttonSaveScore, .buttonSaveScoreGreen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border: solid 1px #D3D3D3;
+        border-radius: 10px;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .buttonSaveScoreGreen:hover{
+        border: solid 1px #3BA68C;
+    }
+}
+
+.buttonPanel{
+    margin-top: 16px;
+    padding: 24px 32px !important;
+    position: sticky;
+    bottom: 0;
+    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+
+
+    .buttonContainer{
+        display: flex;
+        justify-content: space-between;
+    }
+}

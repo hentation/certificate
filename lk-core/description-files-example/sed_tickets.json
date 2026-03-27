@@ -1,0 +1,100 @@
+{
+    "app": {
+        "appTitle": "Тест тестов",
+        "appDescription": ""
+    },
+    "forms": {
+        "enableFormSubmissionByAnyUser": true
+    },
+    "fields": {
+        "specialFields": [
+            "status",
+            "formSubmissionDateTime",
+            "formSubmissionUser",
+            "moderatorFeedbackToSubmission"
+        ],
+        "formFields": [
+            {
+                "name": "80580d5c25214eeb8520183ef0051f95",
+                "title": "Тест-кейсы",
+                "type": "list",
+                "required": true,
+                "values": [
+                    "1. Входящая корреспонденция",
+                    "2. Договоры",
+                    "3. Документы СМК",
+                    "4. Закупки",
+                    "5. Заявка на перевозку",
+                    "6. Заявки на бронирование ММА",
+                    "7. Заявки на информирование - сервис Рассылка уведомлений",
+                    "8. Заявки на информирование о проведении опроса",
+                    "9. Заявки на создание/изм. доменного имени и сайта",
+                    "10. Исходящая корреспонденция",
+                    "11. ИТ-проекты",
+                    "12. Периодические поручения",
+                    "13. План работ",
+                    "14. Приказы на командирование",
+                    "15. Приказы на практику",
+                    "16. Приказы на проведение научного мероприятия",
+                    "17. Приказы по ОД и Распоряжения",
+                    "18. Протоколы",
+                    "19. Протоколы координационного совета",
+                    "20. РПМ",
+                    "21. СЗ ИПЦ",
+                    "22. СЗ на предлоставление питания",
+                    "23. СЗ на прием иностранных граждан",
+                    "24. СЗ на проведение мероприятия",
+                    "25. Служебные записки",
+                    "26. Справки студентов"
+                ],
+                "visibleInSubmissionsView": true
+            },
+            {
+                "name": "cc8c5494246645848fbe244538851420",
+                "title": "Наличие замечаний",
+                "type": "list",
+                "required": true,
+                "values": [
+                    "Да",
+                    "Нет"
+                ],
+                "visibleInSubmissionsView": true
+            },
+            {
+                "name": "bc68ffb2ba2c461c8c702c4f2bcf0eb0",
+                "title": "Описание результата (пояснение проблемы/всё хорошо)",
+                "type": "string",
+                "required": true,
+                "appearance": "long",
+                "visibleInSubmissionsView": true
+            },
+            {
+                "name": "388d09ab408e4f4bb521e94c91edfdeb",
+                "title": "Ссылки на ИД задачи/задания/документа",
+                "type": "string",
+                "visibleInSubmissionsView": true,
+                "condition": "ref:cc8c5494-2466-4584-8fbe-244538851420 == 'Да'"
+            },
+            {
+                "name": "5be4a2f2cb02494e80591fe4a603baf6",
+                "title": "Критичность",
+                "type": "list",
+                "values": [
+                    "Блокирующее",
+                    "Высокая",
+                    "Средняя",
+                    "Низкая"
+                ],
+                "visibleInSubmissionsView": true,
+                "condition": "ref:cc8c5494246645848fbe244538851420 == 'Да'"
+            },
+            {
+                "name": "12810b65b2e64f088b4b5f5c5a01dba5",
+                "title": "Загрузка файлов",
+                "type": "file",
+                "visibleInSubmissionsView": true,
+                "condition": "ref:cc8c5494246645848fbe244538851420 == 'Да'"
+            }
+        ]
+    }
+}

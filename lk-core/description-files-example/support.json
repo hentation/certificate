@@ -1,0 +1,36 @@
+{
+    "app": {
+        "appTitle": "Запрос в техподдержку",
+        "appDescription": "Сервис для подачи запросов в техподдержку. Может использоваться внешними пользователями, модераторами, возможно и внешними сервисами."
+    },
+    "forms": {
+        "enableFormSubmissionByAnyUser": true,
+        "_enableCustomView": "true"
+    },
+    "fields": {
+        "formFields": [
+            {
+                "name": "ticketTopic",
+                "title": "Тема обращения",
+                "type": "string",
+                "required": true
+            },
+            {
+                "name": "serviceName",
+                "title": "Сервис (если применимо)",
+                "type": "string"
+            },
+            {
+                "name": "extraContact",
+                "title": "Дополнительный способ связи",
+                "type": "string"
+            },
+            {
+                "name": "issueDetails",
+                "title": "Подробности",
+                "type": "string",
+                "required": true
+            }
+        ]
+    }
+}

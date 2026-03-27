@@ -1,0 +1,35 @@
+namespace: lk-test
+k8senv: $K8S_ENV
+
+deployment:
+  annotations: {}
+  type: front
+  replicaCount: 1
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "100m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
+
+env:
+  TZ: Asia/Yekaterinburg
+
+secret:
+  enabled: false
+  envSecretName:
+  confSecretName:
+
+ingress:
+  enabled: true
+  host: certificate-service-test.my1.urfu.ru
+  port: 80
+  annotations:
+
+services:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8080
+
